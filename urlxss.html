@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-// created by twitter.com/az7rb 
-<title>DOM-Based open Redirect to DOM-Based xss</title>
+<!-- created by https://twitter.com/az7rb -->
+
+<title>Redirect to xss</title>
 </head>
 <body>
 <script>
+var y = location.hash.substring(1);
+if (y) {
+    window.location='http://'+decodeURIComponent(y);
+}
   var x = location.hash.substring(1);
 if (x) {
     window.location=decodeURIComponent(x);
